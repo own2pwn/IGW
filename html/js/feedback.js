@@ -1,0 +1,15 @@
+$(function () {
+    $("#feedback-form").find("form").on('submit', function (event) {
+        var $form = $(this);
+        $.ajax({
+            type: $form.attr('method'),
+            url: $form.attr('action'),
+            data: $form.serialize(),
+            success: function () {
+                $("#feedback-form").toggle("slide").find("textarea").val('');
+            }
+        });
+        event.preventDefault();
+        $("#feedback-form").toggle("slide");
+    });
+});

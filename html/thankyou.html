@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <meta name="description" content="@Dogonasheva Online Shop"/>
+    <!-- ICON -->
+    <link rel="shortcut icon" href="images/logo.png">
+    <link rel="stylesheet" type="text/css" href="css/default.css"/>
+    <link rel="stylesheet" type="text/css" href="css/component.css"/>
+    <link rel="stylesheet" type="text/css" href="css/feedback.css"/>
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css'/>
+</head>
+<body>
+
+<div class="container1">
+    <div class="top-header" id="home">
+        <div class="container">
+            <div class="logo">
+                <a href="index.php"><img src="images/logo.png" alt=""/></a>
+            </div>
+        </div>
+    </div>
+    <div class="jumbotron text-xs-center" style="text-align: center; cursor: default;">
+        <h1 class="display-3">Thank You!</h1>
+        <p class="lead"><strong>Please check your email</strong> for more information about your order.</p>
+        <p>
+            Having trouble? <a id="contactUs" style="color: blue">Contact us</a>
+        </p>
+        <p class="lead">
+            <a class="btn btn-primary btn-sm" href="index.php" role="button">Continue to homepage</a>
+        </p>
+    </div>
+
+
+    <div class="container" style="width: 100%">
+        <div class="subscribe-section" style="font-family: lato">
+            <div class="subscribe text-center">
+                <h4>Subscribe To Our Newsletter</h4>
+                <input type="text" class="text" value="Your email..." onfocus="this.value = '';"
+                       onblur="if (this.value == '') {this.value = 'Your email...';}">
+                <input type="submit" value="Subscribe">
+            </div>
+            <div class="social-icons text-center">
+                <i class="pinterest"></i>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer" style="background: #1c242b">
+        <div class="up-arrow" id="arr">
+            <a class="scroll" href="#home"></a>
+        </div>
+        <div class="container">
+            <div class="copyrights">
+                <p>Copyright © 2018 All rights reserved | Made by <a href="https://indexStorm.com">indexStorm</a></p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div id="feedback">
+        <div id="feedback-form" style='z-index: 10000' class="col-xs-4 col-md-4 panel panel-default">
+            <form method="POST" action="/feedback" class="form panel-body" role="form">
+                <div class="form-group">
+                    <input class="form-control" name="email" autofocus placeholder="Your e-mail" type="email"/>
+                </div>
+                <div class="form-group" style="z-index: 10000">
+                    <textarea class="form-control" name="body" required placeholder="Please write your feedback here..."
+                              rows="5"></textarea>
+                </div>
+                <button class="btn btn-primary pull-right" type="submit">Send</button>
+            </form>
+        </div>
+        <div id="feedback-tab">Ask Question</div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/grid.js"></script>
+    <script src="js/feedback.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1200);
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $("#contactUs").click(function () {
+            $("#feedback-form").toggle("slide");
+        });
+    </script>
+    <script type="text/javascript">
+        $("#feedback-tab").click(function () {
+            $("#feedback-form").toggle("slide");
+        });
+        $(document).click(function (event) {
+            if (!$(event.target).closest("#feedback").length && !$(event.target).closest("#contactUs").length) {
+                if ($('#feedback-form').is(":visible")) {
+                    $('#feedback-form').toggle("slide");
+                }
+            }
+        });
+    </script>
+</body>
+</html>
