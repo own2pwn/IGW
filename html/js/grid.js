@@ -325,7 +325,7 @@ var Grid = (function () {
             this.$description = $('<p></p>');
             var detailAppends = [this.$title, this.$description];
             if (settings.showVisitButton === true) {
-                this.$href = $('<a id="order-btn" href="./cart.php">Order</a>');
+                this.$href = $('<a id="order-btn" href="./cart.php">Заказать</a>');
                 detailAppends.push(this.$href);
             }
             this.$details = $('<div class="og-details"></div>').append(detailAppends);
@@ -372,7 +372,7 @@ var Grid = (function () {
 
             this.$title.html(eldata.title);
             var elem = $("#order-btn")[0];
-            elem.innerHTML = 'Order ' + eldata.price + '₽';
+            elem.innerHTML = 'Заказать ' + eldata.price + '₽';
             //elem.href = 'mem';
             elem.removeAttribute("href");
             elem.onclick = function () {

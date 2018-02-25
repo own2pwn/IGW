@@ -10,6 +10,5 @@ $(function () {
             }
         });
         event.preventDefault();
-        $("#feedback-form").toggle("slide");
     });
 });

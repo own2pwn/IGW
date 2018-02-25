@@ -1,4 +1,10 @@
-<?php2
+<?php
+    /**
+     * Created by PhpStorm.
+     * User: alpha
+     * Date: 25.01.18
+     * Time: 0:12
+     */
 
     $first_name  = $_POST['fn'];
     $last_name   = $_POST['ln'];
@@ -41,3 +47,9 @@
     $insert->execute();
 
     var_dump($insert->errorInfo());
+
+    $subscribe = $db->prepare('INSERT INTO subscribers VALUES (DEFAULT, :email)');
+    $subscribe->bindParam('email', $email);
+    $subscribe->execute();
+
+    var_dump($subscribe->errorInfo());

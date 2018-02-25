@@ -1,13 +1,13 @@
 <?php
     /**
      * Created by PhpStorm.
-     * User: own2pwn
-     * Date: 25.01.18
-     * Time: 0:41
+     * User: supreme
+     * Date: 10.02.18
+     * Time: 23:59
      */
 
     class OrderItem {
-        private $id;
+        public $id;
 
         public $order_id;
 
@@ -37,17 +37,3 @@
             $this->order_id = $this->id;
         }
     }
-
-    $ROOT_PATH = $_SERVER['DOCUMENT_ROOT'];
-    include_once $ROOT_PATH . '/inc/CRUD.php';
-
-    $db = new CRUD();
-
-    $select = $db->prepare("SELECT * FROM orders");
-    $select->execute();
-
-    $select->setFetchMode(PDO::FETCH_CLASS, 'OrderItem');
-    $orders = array();
-
-    while ($order = $select->fetch())
-        array_push($orders, $order);

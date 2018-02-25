@@ -24,8 +24,13 @@
     <link rel="stylesheet" type="text/css" href="css/component.css"/>
     <link rel="stylesheet" type="text/css" href="css/feedback.css"/>
     <script src="js/modernizr.custom.js"></script>
+    <style>
+        a {
+            cursor: pointer;
+        }
+    </style>
 </head>
-<body>
+<body <!--style="background: #1c242b"-->
 <div class="container1">
     <div class="header" id="home">
         <div class="top-header">
@@ -41,7 +46,71 @@
             </div>
         </div>
     </div>
-
+	<section id="services" class="services bg-primary" style="background-color: #E8F2F6"> <!--#E8F2F6-->
+          <div class="container">
+              <div class="row text-center" style="color: black">
+                  <div class="col-lg-10 col-lg-offset-1">
+                      <hr class="small"> <!-- TODO: Look for hr classes -->
+                      <div class="row">
+                          <div class="col-md-4 col-sm-6" >
+                              <div class="service-item"style="
+							    border: solid 10px #B1BBBF;
+							    border-radius: 30px;
+							    padding: 10px;
+							    border-bottom-color: #1C3DC1;">
+                                  <span class="fa-stack fa-4x">
+                                  <i class="fa fa-circle fa-stack-2x" style="color: #1C3DC1"></i>
+                                  <i class="fa fa-user fa-stack-1x text-primary" style="color: white"></i>
+                              </span>
+                                  <h3>
+                                      <strong>Я волонтёр</strong>
+                                  </h3>
+                                  <p>Примите участие в качестве волонтёра и
+                                    присоединитесь к команде организаторов.</p>
+                              </div>
+                          </div>
+                          <div class="col-md-4 col-sm-6">
+                              <div class="service-item"  style="
+							    border: solid 10px #B1BBBF;
+							    border-radius: 30px;
+							    padding: 10px;
+								border-bottom-color: #FFD700;">
+                                  <span class="fa-stack fa-4x">
+                                  <i class="fa fa-circle fa-stack-2x" style="color: white"></i>
+                                  <i class="fa fa-trophy fa-stack-1x text-primary" style="color: #FFD700"></i>
+                              </span>
+                                  <h3>
+                                      <strong>Я конкурсант</strong>
+                                  </h3>
+                                  <p style="font-size: 18px"> 
+	                                  Примите непосредственное участие в фестивале и получите ценные призы.</p>
+                              </div>
+                          </div>
+                          <div class="col-md-4 col-sm-6">
+                              <div class="service-item"  style="
+								  border: solid 10px #B1BBBF;
+								  border-radius: 30px;
+								  padding: 10px;
+								  border-bottom-color: #C40E0E;">
+                                  <span class="fa-stack fa-4x">
+                                  <i class="fa fa-circle fa-stack-2x" style="color: #C40E0E"></i>
+                                  <i class="fa fa-thumbs-o-up fa-stack-1x text-primary" style="color: white"></i>
+                              </span>
+                                  <h3>
+                                      <strong>Я жюри</strong>
+                                  </h3>
+                                  <p>Определите самые креативные и достойные проекты, которые мы наградим призами.</p>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- /.row (nested) -->
+                  </div>
+                  <!-- /.col-lg-10 -->
+              </div>
+              <!-- /.row -->
+          </div>
+          <!-- /.container -->
+      </section>
     <div class="main" id="kok">
         <ul id="og-grid" class="og-grid">
 
@@ -69,13 +138,17 @@
 </div><!-- /container -->
 
 
-<div class="container" style="width: 100%">
-    <div id="feedback-form-btn" class="subscribe-section" style="font-family: lato">
-        <div class="subscribe text-center">
-            <h4>Subscribe To Our Newsletter</h4>
-            <input type="text" class="text" value="Your email..." id="email-text" onfocus="this.value = '';"
-                   onblur="if (this.value == '') {this.value = 'Your email...';}">
-            <input type="submit" value="Subscribe" id="btn-subscribe">
+<div  class="container" style="width: 100%">
+    <div id="feedback-form-btn" class="subscribe-section" style="font-family: sans-serif">
+        <div class="subscribe text-center" id="appearThen" hidden="true">
+            <h4>Спасибо!</h4>
+        </div>
+
+        <div class="subscribe text-center" id = "kokes">
+            <h4>Подпишитесь на нашу рассылку</h4>
+            <input type="text" class="text" value="Ваш email..." id="email-text" onfocus="this.value = '';"
+                   onblur="if (this.value == '') {this.value = 'Ваш email...';}">
+            <input type="submit" value="Подписаться" id="btn-subscribe">
         </div>
         <div class="social-icons text-center">
             <i class="pinterest"></i>
@@ -96,20 +169,20 @@
     </div>
 </div>
 <div id="feedback">
-    <div id="feedback-form" style='z-index: 10000' class="col-xs-4 col-md-4 panel panel-default">
-        <form method="POST" action="/api/feedback.php" class="form panel-body" role="form">
-            <div class="form-group">
-                <input class="form-control" name="email" autofocus placeholder="Your e-mail" type="email"/>
-            </div>
-            <div class="form-group" style="z-index: 10000">
-                <textarea class="form-control" name="body" required placeholder="Please write your feedback here..."
-                          rows="5"></textarea>
-            </div>
-            <button class="btn btn-primary pull-right" type="submit">Send</button>
-        </form>
+        <div id="feedback-form" style='z-index: 10000' class="col-xs-4 col-md-4 panel panel-default">
+            <form method="POST" action="/feedback" class="form panel-body" role="form">
+                <div class="form-group">
+                    <input class="form-control" name="email" autofocus placeholder="Ваш e-mail" type="email"/>
+                </div>
+                <div class="form-group" style="z-index: 10000">
+                    <textarea class="form-control" name="body" required placeholder="Введите свой вопрос..."
+                              rows="5"></textarea>
+                </div>
+                <button class="btn btn-primary pull-right" type="submit">Отправить</button>
+            </form>
+        </div>
+    <div id="feedback-tab" style="width: 132px;">Есть вопрос?</div>
     </div>
-    <div id="feedback-tab">Feedback</div>
-</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
 <script src="js/grid.js"></script>
@@ -129,7 +202,7 @@
         $("#feedback-form").toggle("slide");
     });
     $(document).click(function (event) {
-        if (!$(event.target).closest("#feedback").length) {
+        if (!$(event.target).closest("#feedback").length && !$(event.target).closest("#btn-subscribe").length) {
             if ($('#feedback-form').is(":visible")) {
                 $('#feedback-form').toggle("slide");
             }
