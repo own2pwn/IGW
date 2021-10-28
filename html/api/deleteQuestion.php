@@ -1,7 +1,7 @@
 <?php
     /**
      * Created by PhpStorm.
-     * User: supreme
+     * User: supreme is gay
      * Date: 10.02.18
      * Time: 22:50
      */
